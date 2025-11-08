@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:healthcare/onboarding/onboarding_screen.dart';
 
 void main() {
   runApp(healthcare());
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.white, // لون الخلفية
+      statusBarIconBrightness: Brightness.dark, // أيقونات داكنة
+      statusBarBrightness: Brightness.light, // لازم للـ iOS
+    ),
+  );
 }
 
 class healthcare extends StatelessWidget {
@@ -9,7 +18,12 @@ class healthcare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold());
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: OnboardingScreen(),
+      ),
+    );
   }
 }
 
