@@ -1,0 +1,15 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/splash_ios_android_11.png
+
+  android_12:
+    image: assets/images/splash_ios_android_12.png
+    color: "#FFFFFF"
+    icon_background_color: "#FFFFFF" # تأكد إن الخلفية نفس اللون لو الصورة مش full-screen
+
+  android: true
+  ios: true
+  web: false
+
+  android_gravity: fill
+  ios_content_mode: scaleAspectFill
