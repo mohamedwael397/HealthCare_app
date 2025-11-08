@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:healthcare/Login_screen/login_screen.dart';
+import 'package:healthcare/register_screen/register_screen.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -37,7 +39,12 @@ class Signup extends StatelessWidget {
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF407CE2), // لون الخلفية
                     shape: RoundedRectangleBorder(
@@ -65,7 +72,12 @@ class Signup extends StatelessWidget {
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white, // لون الخلفية
                     shape: RoundedRectangleBorder(
