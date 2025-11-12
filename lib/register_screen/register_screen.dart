@@ -6,7 +6,7 @@ import 'package:healthcare/login_screen/login_screen.dart';
 import 'package:healthcare/constant/constants.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();

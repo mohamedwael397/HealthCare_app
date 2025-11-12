@@ -5,8 +5,11 @@ import 'package:healthcare/Home/cubit/cubit.dart';
 import 'package:healthcare/Home/cubit/states.dart';
 
 class MainPage extends StatelessWidget {
+<<<<<<< HEAD
   const MainPage({super.key});
 
+=======
+>>>>>>> 2ff976a25248ea8be63421499049c7b967276633
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

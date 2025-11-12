@@ -112,11 +112,22 @@ Widget taps(String image, String label, VoidCallback ontap) {
       children: [
         CircleAvatar(
           radius: 32,
+<<<<<<< HEAD
           backgroundColor: Colors.blue,
           child: SvgPicture.asset("$image"),
         ),
         Gap(10),
         Text(label, style: TextStyle(color: Color(0xFF221F1F), fontSize: 14)),
+=======
+          child: SvgPicture.asset("$image"),
+          backgroundColor: Colors.blue,
+        ),
+        Gap(10),
+        Text(
+          "$label",
+          style: TextStyle(color: Color(0xFF221F1F), fontSize: 14),
+        ),
+>>>>>>> 2ff976a25248ea8be63421499049c7b967276633
       ],
     ),
   );
