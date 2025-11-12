@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:healthcare/onboarding/onboarding_screen.dart';
+import 'package:healthcare/Home/main_page.dart';
 
 void main() {
   runApp(healthcare());
@@ -19,10 +19,7 @@ class healthcare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: OnboardingScreen(),
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: MainPage()),
     );
   }
 }
