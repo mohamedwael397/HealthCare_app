@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 
 typedef MyValidator = String? Function(String?);
 
@@ -98,4 +100,39 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
       borderSide: BorderSide(color: color, width: width),
     );
   }
+}
+
+Widget taps(String image, String label, VoidCallback ontap) {
+  return InkWell(
+    onTap: ontap,
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          radius: 32,
+          child: SvgPicture.asset("$image"),
+          backgroundColor: Colors.blue,
+        ),
+        Gap(10),
+        Text(
+          "$label",
+          style: TextStyle(color: Color(0xFF221F1F), fontSize: 14),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget healthartical(
+  String image,
+  String title,
+  String meta,
+  VoidCallback ontap,
+) {
+  return Column(children: [
+      
+    ],
+  );
 }
