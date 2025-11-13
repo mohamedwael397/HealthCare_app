@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
 typedef MyValidator = String? Function(String?);
@@ -11,7 +11,7 @@ class TextFormFieldWidget extends StatefulWidget {
   final bool isPassword;
   final TextEditingController controller;
   final MyValidator validator;
-  final Widget? prefixIcon; // Changed to Widget to support SvgPicture or Icon
+  final Widget? prefixIcon; // لدعم SvgPicture أو Icon
 
   TextFormFieldWidget({
     required this.controller,
@@ -102,6 +102,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   }
 }
 
+// Widget للأيقونات + التسمية
 Widget taps(String image, String label, VoidCallback ontap) {
   return InkWell(
     onTap: ontap,
@@ -112,35 +113,127 @@ Widget taps(String image, String label, VoidCallback ontap) {
       children: [
         CircleAvatar(
           radius: 32,
-<<<<<<< HEAD
           backgroundColor: Colors.blue,
-          child: SvgPicture.asset("$image"),
-        ),
-        Gap(10),
-        Text(label, style: TextStyle(color: Color(0xFF221F1F), fontSize: 14)),
-=======
-          child: SvgPicture.asset("$image"),
-          backgroundColor: Colors.blue,
+          child: SvgPicture.asset(image),
         ),
         Gap(10),
         Text(
-          "$label",
-          style: TextStyle(color: Color(0xFF221F1F), fontSize: 14),
+          label,
+          style: const TextStyle(color: Color(0xFF221F1F), fontSize: 14),
         ),
->>>>>>> 2ff976a25248ea8be63421499049c7b967276633
       ],
     ),
   );
 }
 
-Widget healthartical(
+// Widget للمقالات الصحية
+Widget healthArticle(
   String image,
   String title,
   String meta,
   VoidCallback ontap,
 ) {
-  return Column(children: [
-      
-    ],
+  return InkWell(
+    onTap: ontap,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image.asset(image, fit: BoxFit.cover),
+        Gap(10),
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        Gap(5),
+        Text(meta, style: const TextStyle(fontSize: 14, color: Colors.grey)),
+        Gap(15),
+      ],
+    ),
+  );
+}
+
+Widget topdoctors() {
+  return Container(
+    width: double.infinity,
+    height: 114,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      border: Border.all(color: Colors.grey[350]!),
+      color: Colors.white,
+    ),
+    child: Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Image.asset("assets/images/Image.png", fit: BoxFit.fill),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "Dr. Vaamana",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF101623),
+                ),
+              ),
+              Text(
+                "Dentists",
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                ),
+              ),
+              Container(
+                width: 41,
+                height: 18,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.lightBlue[200],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset("assets/icons/Star.svg"),
+                    Gap(5),
+                    Text(
+                      "4.7",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF407CE2),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  SvgPicture.asset("assets/icons/Location.svg"),
+                  Gap(5),
+                  Text(
+                    "800m away",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
   );
 }
