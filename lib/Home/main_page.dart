@@ -5,15 +5,12 @@ import 'package:healthcare/Home/cubit/cubit.dart';
 import 'package:healthcare/Home/cubit/states.dart';
 
 class MainPage extends StatelessWidget {
-<<<<<<< HEAD
   const MainPage({super.key});
 
-=======
->>>>>>> 2ff976a25248ea8be63421499049c7b967276633
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => appcubit(),
+      create: (context) => appcubit(), // تأكد أن اسم الكلاس صحيح
       child: BlocConsumer<appcubit, States>(
         listener: (context, state) {},
         builder: (context, state) {
@@ -24,14 +21,18 @@ class MainPage extends StatelessWidget {
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               backgroundColor: Colors.white,
-              selectedItemColor: Color(0xFF407CE2),
+              selectedItemColor: const Color(0xFF407CE2),
               unselectedItemColor: Colors.grey,
+              currentIndex: cubit.current_index,
+              onTap: (value) {
+                cubit.onchange(value);
+              },
               items: [
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
                     "assets/icons/Home.svg",
                     color: cubit.current_index == 0
-                        ? Color(0xFF407CE2)
+                        ? const Color(0xFF407CE2)
                         : Colors.grey,
                   ),
                   label: "Home",
@@ -40,7 +41,7 @@ class MainPage extends StatelessWidget {
                   icon: SvgPicture.asset(
                     "assets/icons/Frame 5.svg",
                     color: cubit.current_index == 1
-                        ? Color(0xFF407CE2)
+                        ? const Color(0xFF407CE2)
                         : Colors.grey,
                   ),
                   label: "Reports",
@@ -49,7 +50,7 @@ class MainPage extends StatelessWidget {
                   icon: SvgPicture.asset(
                     "assets/icons/7503212_notification_bell_alert_icon 2.svg",
                     color: cubit.current_index == 2
-                        ? Color(0xFF407CE2)
+                        ? const Color(0xFF407CE2)
                         : Colors.grey,
                   ),
                   label: "Notifications",
@@ -58,16 +59,12 @@ class MainPage extends StatelessWidget {
                   icon: SvgPicture.asset(
                     "assets/icons/Profile.svg",
                     color: cubit.current_index == 3
-                        ? Color(0xFF407CE2)
+                        ? const Color(0xFF407CE2)
                         : Colors.grey,
                   ),
                   label: "Profile",
                 ),
               ],
-              onTap: (value) {
-                cubit.onchange(value);
-              },
-              currentIndex: cubit.current_index,
             ),
           );
         },
